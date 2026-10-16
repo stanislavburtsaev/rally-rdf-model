@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns:rally="https://example.org/rally#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+  <rdfs:Class rdf:about="https://example.org/rally#Person">
+    <rdfs:label xml:lang="en">Person</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#Driver">
+    <rdfs:label xml:lang="en">Driver</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/rally#Person" />
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#CoDriver">
+    <rdfs:label xml:lang="en">Co-driver</rdfs:label>
+    <rdfs:subClassOf rdf:resource="https://example.org/rally#Person" />
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#ChampionshipSeries">
+    <rdfs:label xml:lang="en">Championship series</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#ChampionshipSeason">
+    <rdfs:label xml:lang="en">Championship season</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#RallySeries">
+    <rdfs:label xml:lang="en">Rally series</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#RallyEvent">
+    <rdfs:label xml:lang="en">Rally event</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#RallyEntry">
+    <rdfs:label xml:lang="en">Rally entry</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#Team">
+    <rdfs:label xml:lang="en">Rally team</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#CarModel">
+    <rdfs:label xml:lang="en">Car model</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#RallyStage">
+    <rdfs:label xml:lang="en">Rally stage</rdfs:label>
+  </rdfs:Class>
+  <rdfs:Class rdf:about="https://example.org/rally#Surface">
+    <rdfs:label xml:lang="en">Road surface</rdfs:label>
+  </rdfs:Class>
+  <rdf:Property rdf:about="https://example.org/rally#hasSeason">
+    <rdfs:label xml:lang="en">has season</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#ChampionshipSeries" />
+    <rdfs:range rdf:resource="https://example.org/rally#ChampionshipSeason" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#seasonOf">
+    <rdfs:label xml:lang="en">season of</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#ChampionshipSeason" />
+    <rdfs:range rdf:resource="https://example.org/rally#ChampionshipSeries" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#hasEvent">
+    <rdfs:label xml:lang="en">has event</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#ChampionshipSeason" />
+    <rdfs:range rdf:resource="https://example.org/rally#RallyEvent" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#inSeason">
+    <rdfs:label xml:lang="en">in season</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="https://example.org/rally#ChampionshipSeason" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#editionOf">
+    <rdfs:label xml:lang="en">edition of</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="https://example.org/rally#RallySeries" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#hasEntry">
+    <rdfs:label xml:lang="en">has entry</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="https://example.org/rally#RallyEntry" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#entryForEvent">
+    <rdfs:label xml:lang="en">entry for event</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:range rdf:resource="https://example.org/rally#RallyEvent" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#hasDriver">
+    <rdfs:label xml:lang="en">has driver</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:range rdf:resource="https://example.org/rally#Driver" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#hasCoDriver">
+    <rdfs:label xml:lang="en">has co-driver</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:range rdf:resource="https://example.org/rally#CoDriver" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#representsTeam">
+    <rdfs:label xml:lang="en">represents team</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:range rdf:resource="https://example.org/rally#Team" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#usesCarModel">
+    <rdfs:label xml:lang="en">uses car model</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:range rdf:resource="https://example.org/rally#CarModel" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#hasStage">
+    <rdfs:label xml:lang="en">has stage</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="https://example.org/rally#RallyStage" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#stageOfEvent">
+    <rdfs:label xml:lang="en">stage of event</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyStage" />
+    <rdfs:range rdf:resource="https://example.org/rally#RallyEvent" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#hasSurface">
+    <rdfs:label xml:lang="en">has surface</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="https://example.org/rally#Surface" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#seasonYear">
+    <rdfs:label xml:lang="en">season year</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#ChampionshipSeason" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#gYear" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#startDate">
+    <rdfs:label xml:lang="en">start date</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#endDate">
+    <rdfs:label xml:lang="en">end date</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#roundNumber">
+    <rdfs:label xml:lang="en">round number</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#editionNumber">
+    <rdfs:label xml:lang="en">edition number</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#numberOfStages">
+    <rdfs:label xml:lang="en">number of stages</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#competitiveDistanceKm">
+    <rdfs:label xml:lang="en">competitive distance (km)</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#totalRouteDistanceKm">
+    <rdfs:label xml:lang="en">total route distance (km)</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#finishingPosition">
+    <rdfs:label xml:lang="en">finishing position</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#stageNumber">
+    <rdfs:label xml:lang="en">stage number</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyStage" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger" />
+  </rdf:Property>
+  <rdf:Property rdf:about="https://example.org/rally#stageLengthKm">
+    <rdfs:label xml:lang="en">stage length (km)</rdfs:label>
+    <rdfs:domain rdf:resource="https://example.org/rally#RallyStage" />
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal" />
+  </rdf:Property>
+  <rdf:Description rdf:about="https://example.org/rally#WRC">
+    <rdf:type rdf:resource="https://example.org/rally#ChampionshipSeries" />
+    <rdfs:label xml:lang="en">FIA World Rally Championship</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q7852" />
+    <rally:hasSeason rdf:resource="https://example.org/rally#WRC1999" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#WRC1999">
+    <rdf:type rdf:resource="https://example.org/rally#ChampionshipSeason" />
+    <rdfs:label xml:lang="en">1999 World Rally Championship season</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q839687" />
+    <rally:hasEvent rdf:resource="https://example.org/rally#MonteCarlo1999" />
+    <rally:seasonOf rdf:resource="https://example.org/rally#WRC" />
+    <rally:seasonYear rdf:datatype="http://www.w3.org/2001/XMLSchema#gYear">1999</rally:seasonYear>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#MonteCarloRally">
+    <rdf:type rdf:resource="https://example.org/rally#RallySeries" />
+    <rdfs:label xml:lang="en">Monte Carlo Rally (recurring series)</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q725531" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#MonteCarlo1999">
+    <rdf:type rdf:resource="https://example.org/rally#RallyEvent" />
+    <rdfs:label xml:lang="en">1999 Monte Carlo Rally</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q5646935" />
+    <rally:competitiveDistanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">424.69</rally:competitiveDistanceKm>
+    <rally:editionNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">67</rally:editionNumber>
+    <rally:editionOf rdf:resource="https://example.org/rally#MonteCarloRally" />
+    <rally:endDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-01-20</rally:endDate>
+    <rally:hasEntry rdf:resource="https://example.org/rally#EntryAuriol1999" />
+    <rally:hasEntry rdf:resource="https://example.org/rally#EntryKankkunen1999" />
+    <rally:hasEntry rdf:resource="https://example.org/rally#EntryMakinen1999" />
+    <rally:hasStage rdf:resource="https://example.org/rally#SS01" />
+    <rally:hasStage rdf:resource="https://example.org/rally#SS10" />
+    <rally:hasSurface rdf:resource="https://example.org/rally#Asphalt" />
+    <rally:hasSurface rdf:resource="https://example.org/rally#Snow" />
+    <rally:inSeason rdf:resource="https://example.org/rally#WRC1999" />
+    <rally:numberOfStages rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">14</rally:numberOfStages>
+    <rally:roundNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</rally:roundNumber>
+    <rally:startDate rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-01-17</rally:startDate>
+    <rally:totalRouteDistanceKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1613.20</rally:totalRouteDistanceKm>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#EntryMakinen1999">
+    <rdf:type rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:label xml:lang="en">1999 Monte Carlo Rally – Tommi Mäkinen / Risto Mannisenmäki</rdfs:label>
+    <rally:entryForEvent rdf:resource="https://example.org/rally#MonteCarlo1999" />
+    <rally:finishingPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</rally:finishingPosition>
+    <rally:hasCoDriver rdf:resource="https://example.org/rally#RistoMannisenmaki" />
+    <rally:hasDriver rdf:resource="https://example.org/rally#TommiMakinen" />
+    <rally:representsTeam rdf:resource="https://example.org/rally#MarlboroMitsubishiRalliart" />
+    <rally:usesCarModel rdf:resource="https://example.org/rally#MitsubishiLancerEvoVI" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#EntryKankkunen1999">
+    <rdf:type rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:label xml:lang="en">1999 Monte Carlo Rally – Juha Kankkunen / Juha Repo</rdfs:label>
+    <rally:entryForEvent rdf:resource="https://example.org/rally#MonteCarlo1999" />
+    <rally:finishingPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">2</rally:finishingPosition>
+    <rally:hasCoDriver rdf:resource="https://example.org/rally#JuhaRepo" />
+    <rally:hasDriver rdf:resource="https://example.org/rally#JuhaKankkunen" />
+    <rally:representsTeam rdf:resource="https://example.org/rally#SubaruWorldRallyTeam" />
+    <rally:usesCarModel rdf:resource="https://example.org/rally#SubaruImprezaS5WRC99" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#EntryAuriol1999">
+    <rdf:type rdf:resource="https://example.org/rally#RallyEntry" />
+    <rdfs:label xml:lang="en">1999 Monte Carlo Rally – Didier Auriol / Denis Giraudet</rdfs:label>
+    <rally:entryForEvent rdf:resource="https://example.org/rally#MonteCarlo1999" />
+    <rally:finishingPosition rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">3</rally:finishingPosition>
+    <rally:hasCoDriver rdf:resource="https://example.org/rally#DenisGiraudet" />
+    <rally:hasDriver rdf:resource="https://example.org/rally#DidierAuriol" />
+    <rally:representsTeam rdf:resource="https://example.org/rally#ToyotaCastrolTeam" />
+    <rally:usesCarModel rdf:resource="https://example.org/rally#ToyotaCorollaWRC" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#TommiMakinen">
+    <rdf:type rdf:resource="https://example.org/rally#Driver" />
+    <rdfs:label xml:lang="en">Tommi Mäkinen</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q217260" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#RistoMannisenmaki">
+    <rdf:type rdf:resource="https://example.org/rally#CoDriver" />
+    <rdfs:label xml:lang="en">Risto Mannisenmäki</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q905647" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#JuhaKankkunen">
+    <rdf:type rdf:resource="https://example.org/rally#Driver" />
+    <rdfs:label xml:lang="en">Juha Kankkunen</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q313708" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#JuhaRepo">
+    <rdf:type rdf:resource="https://example.org/rally#CoDriver" />
+    <rdfs:label xml:lang="en">Juha Repo</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#DidierAuriol">
+    <rdf:type rdf:resource="https://example.org/rally#Driver" />
+    <rdfs:label xml:lang="en">Didier Auriol</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q313387" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#DenisGiraudet">
+    <rdf:type rdf:resource="https://example.org/rally#CoDriver" />
+    <rdfs:label xml:lang="en">Denis Giraudet</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#MarlboroMitsubishiRalliart">
+    <rdf:type rdf:resource="https://example.org/rally#Team" />
+    <rdfs:label xml:lang="en">Marlboro Mitsubishi Ralliart</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#SubaruWorldRallyTeam">
+    <rdf:type rdf:resource="https://example.org/rally#Team" />
+    <rdfs:label xml:lang="en">Subaru World Rally Team</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#ToyotaCastrolTeam">
+    <rdf:type rdf:resource="https://example.org/rally#Team" />
+    <rdfs:label xml:lang="en">Toyota Castrol Team</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#MitsubishiLancerEvoVI">
+    <rdf:type rdf:resource="https://example.org/rally#CarModel" />
+    <rdfs:label xml:lang="en">Mitsubishi Lancer Evolution VI</rdfs:label>
+    <rdfs:seeAlso rdf:resource="http://www.wikidata.org/entity/Q44591" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#SubaruImprezaS5WRC99">
+    <rdf:type rdf:resource="https://example.org/rally#CarModel" />
+    <rdfs:label xml:lang="en">Subaru Impreza S5 WRC 99</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#ToyotaCorollaWRC">
+    <rdf:type rdf:resource="https://example.org/rally#CarModel" />
+    <rdfs:label xml:lang="en">Toyota Corolla WRC</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#SS01">
+    <rdf:type rdf:resource="https://example.org/rally#RallyStage" />
+    <rdfs:label xml:lang="en">Plan de Vitrolles – Faye</rdfs:label>
+    <rally:stageLengthKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">48.28</rally:stageLengthKm>
+    <rally:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</rally:stageNumber>
+    <rally:stageOfEvent rdf:resource="https://example.org/rally#MonteCarlo1999" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#SS10">
+    <rdf:type rdf:resource="https://example.org/rally#RallyStage" />
+    <rdfs:label xml:lang="en">Lantosque – Lucéram 1</rdfs:label>
+    <rally:stageLengthKm rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20.87</rally:stageLengthKm>
+    <rally:stageNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">10</rally:stageNumber>
+    <rally:stageOfEvent rdf:resource="https://example.org/rally#MonteCarlo1999" />
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#Asphalt">
+    <rdf:type rdf:resource="https://example.org/rally#Surface" />
+    <rdfs:label xml:lang="en">Asphalt / tarmac</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://example.org/rally#Snow">
+    <rdf:type rdf:resource="https://example.org/rally#Surface" />
+    <rdfs:label xml:lang="en">Snow</rdfs:label>
+  </rdf:Description>
+</rdf:RDF>
